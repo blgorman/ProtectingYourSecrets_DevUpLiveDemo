@@ -9,7 +9,7 @@
             "value": "centralus"
         },
         "uniqueIdentifier": {
-            "value": "20241231acw"
+            "value": "20240815dvp"
         },
         "logAnalyticsWorkspaceName": {
             "value": "LA-ProtectingYourSecrets"
@@ -51,7 +51,7 @@
             "value": "Azure#54321!"
         },
         "clientIPAddress": {
-            "value": "68.235.44.201"
+            "value": "68.235.44.76"
         }
     }
 }
