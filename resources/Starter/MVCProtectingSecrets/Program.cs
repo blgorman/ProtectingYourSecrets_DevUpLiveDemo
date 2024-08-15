@@ -15,19 +15,19 @@ namespace MVCProtectingSecrets
             builder.Services.AddHttpClient();
 
             //TODO: Add the Azure App Configuration code here.
-            //var appConfigConnection = builder.Configuration.GetConnectionString("AzureAppConfigConnection");
+            var appConfigConnection = builder.Configuration.GetConnectionString("AzureAppConfigConnection");
 
-            //builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
-            //{
-            //    config.AddAzureAppConfiguration(options =>
-            //    {
-            //        options.Connect(appConfigConnection);
-            //        options.ConfigureKeyVault(options =>
-            //        {
-            //            options.SetCredential(new DefaultAzureCredential());
-            //        });
-            //    });
-            //});
+            builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                config.AddAzureAppConfiguration(options =>
+                {
+                    options.Connect(appConfigConnection);
+                    options.ConfigureKeyVault(options =>
+                    {
+                        options.SetCredential(new DefaultAzureCredential());
+                    });
+                });
+            });
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
