@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'resources/starter/MVCProtectingSecrets/**'
   workflow_dispatch:
 
 permissions:
